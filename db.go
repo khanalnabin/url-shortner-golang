@@ -13,7 +13,7 @@ func connectDB() (*redis.Client, error) {
 	if !exists {
 		return nil, errors.New("invalid redis address")
 	}
-	password, exists := os.LookupEnv("REDIS_ADDRESS")
+	password, exists := os.LookupEnv("REDIS_PASSWORD")
 	dbStr, exists := os.LookupEnv("REDIS_DB")
 	db := 0
 	if exists {
