@@ -1,12 +1,12 @@
 module github.com/khanalnabin/url-shortner
 
-go 1.20.3
+go 1.20
 
 require (
 	github.com/gofiber/fiber/v2 v2.50.0
 	github.com/gofiber/template/html/v2 v2.0.5
 	github.com/joho/godotenv v1.5.1
-	github.com/redis/go-redis/v9 v9.2.1
+	github.com/redis/go-redis/v9 v9.3.0
 )
 
 require (
