@@ -19,10 +19,9 @@ func main() {
 		Views: engine,
 	})
 
-	setupRoutes(app)
-
 	app.Use(logger.New())
 	app.Use(cors.New())
+	setupRoutes(app)
 
 	connClosed := make(chan bool)
 
