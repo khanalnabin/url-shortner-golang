@@ -33,8 +33,8 @@ func main() {
 		}
 		connClosed <- true
 	}()
-	serverPort := os.Getenv("SERVER_PORT")
-	if serverPort == "" {
+	serverPort, exists := os.LookupEnv("SERVER_PORT")
+	if !exists {
 		serverPort = "3000"
 	}
 	if err := app.Listen(":" + serverPort); err != nil {
