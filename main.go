@@ -7,6 +7,9 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html/v2"
+
+	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/gofiber/fiber/v2/middleware/logger"
 	_ "github.com/joho/godotenv/autoload"
 )
 
@@ -17,6 +20,9 @@ func main() {
 	})
 
 	setupRoutes(app)
+
+	app.Use(logger.New())
+	app.Use(cors.New())
 
 	connClosed := make(chan bool)
 
