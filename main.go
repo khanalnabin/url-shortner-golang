@@ -38,9 +38,9 @@ func main() {
 		}
 		connClosed <- true
 	}()
-	serverPort, exists := os.LookupEnv("SERVER_PORT")
+	serverPort, exists := os.LookupEnv("PORT")
 	if !exists {
-		serverPort = "3000"
+		serverPort = "8080"
 	}
 	if err := app.Listen(":" + serverPort); err != nil {
 		log.Println("Unable to start the server. Error: ", err.Error())
